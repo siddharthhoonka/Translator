@@ -96,7 +96,7 @@ def translate_with_groq(text, source_lang, target_lang):
 
 # UI Title and Subtitle  
 st.markdown("<div class='title'>🌍 Multilingual Translator</div>", unsafe_allow_html=True)  
-st.markdown("<div class='subtitle'>Translate text from one language to another using the Groq API.</div>", unsafe_allow_html=True)  
+st.markdown("<div class='subtitle'>🗣️ Break language barriers – Communicate effortlessly across the globe!</div>", unsafe_allow_html=True)  
 
 # Input fields  
 source_lang = st.text_input("Enter the source language")  
