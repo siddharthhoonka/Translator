@@ -2,11 +2,11 @@ import streamlit as st
 import requests  
 import json  
 
-# Set up Groq API key  
+
 GROQ_API_KEY = "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"  
 GROQ_API_URL = "https://api.groq.com/openai/v1/chat/completions"  
 
-# Custom CSS for better styling  
+
 st.markdown("""  
     <style>  
         body {  
@@ -69,7 +69,7 @@ st.markdown("""
     </style>  
 """, unsafe_allow_html=True)  
 
-# Function to translate using Groq API  
+
 def translate_with_groq(text, source_lang, target_lang):  
     headers = {  
         "Authorization": f"Bearer {GROQ_API_KEY}",  
@@ -94,16 +94,16 @@ def translate_with_groq(text, source_lang, target_lang):
     else:  
         raise Exception(f"Groq API Error: {response.status_code}, {response.text}")  
 
-# UI Title and Subtitle  
+
 st.markdown("<div class='title'>🌍 Multilingual Translator</div>", unsafe_allow_html=True)  
 st.markdown("<div class='subtitle'>🗣️ Break language barriers – Communicate effortlessly across the globe!</div>", unsafe_allow_html=True)  
 
-# Input fields  
+
 source_lang = st.text_input("Enter the source language")  
 target_lang = st.text_input("Enter the target language")  
 text = st.text_area("Enter the text to translate")  
 
-# Translation Button  
+
 if st.button("Translate"):  
     if source_lang and target_lang and text:  
         try:  
@@ -111,7 +111,7 @@ if st.button("Translate"):
                 translated_text = translate_with_groq(text, source_lang, target_lang)  
             st.success("✅ Translation successful!")  
 
-            # Output result in a styled box  
+          
             st.markdown("<div class='result-box'>", unsafe_allow_html=True)  
             st.markdown(f"**Translation ({source_lang} → {target_lang}):**")  
             st.write(translated_text)  
@@ -122,7 +122,4 @@ if st.button("Translate"):
     else:  
         st.warning("⚠️ Please fill in all fields.")  
 
-# Run the Streamlit app using:  
-# ```  
-# streamlit run streamlit_app.py  
-# ```  
+
